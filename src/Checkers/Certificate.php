@@ -26,7 +26,7 @@ class Certificate extends Base
 
         try {
             foreach ($resources as $url) {
-                [$healthy, $message] = $this->checkCertificate($url);
+                list($healthy, $message) = $this->checkCertificate($url);
 
                 if (! $healthy) {
                     return $this->makeResult(false, $message);
